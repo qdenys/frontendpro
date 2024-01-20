@@ -2,7 +2,7 @@ let firstNumber = +prompt('Введіть будь ласка перше чис�
 let secondNumber = +prompt('Введіть будь ласка друге число:');
 
 
-if (!isNaN(firstNumber) || !isNaN(secondNumber)) {
+if (!isNaN(firstNumber) && !isNaN(secondNumber)) {
 	let add = firstNumber + secondNumber;
 	let sub = firstNumber - secondNumber;
 	let mult = firstNumber * secondNumber;
