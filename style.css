@@ -1,0 +1,32 @@
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+table, td {
+  border: 1px solid azure;
+  border-collapse: collapse;
+  padding: 5px;
+  text-align: center;
+  width: 100%;
+}
+
+td {
+  width: 30px;
+  height: 30px;
+}
+
+body {
+
+  font-family: 'VT323', monospace;
+  background-color: #151515;
+  color: azure;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 32px;
+}
