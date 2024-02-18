@@ -10,21 +10,37 @@
 </head>
 <body>
 <div class="wrapper">
-	<div class="image-container">
-		<img class="myImg active" src="img/1.jpg" alt="image">
-		<img class="myImg" src="img/2.jpg" alt="image">
-		<img class="myImg" src="img/3.jpg" alt="image">
-		<img class="myImg" src="img/4.jpg" alt="image">
-		<img class="myImg" src="img/5.jpg" alt="image">
-		<img class="myImg" src="img/6.jpg" alt="image">
-		<img class="myImg" src="img/7.jpg" alt="image">
-		<img class="myImg" src="img/8.jpg" alt="image">
-		<img class="myImg" src="img/9.jpg" alt="image">
-	</div>
+	<!--	Перший варіант-->
+	<div class="inner">
+		<div class="image-container">
+			<h1>Перший варіант</h1>
+			<img class="myImg active" src="img/1.jpg" alt="image">
+			<img class="myImg" src="img/2.jpg" alt="image">
+			<img class="myImg" src="img/3.jpg" alt="image">
+			<img class="myImg" src="img/4.jpg" alt="image">
+			<img class="myImg" src="img/5.jpg" alt="image">
+			<img class="myImg" src="img/6.jpg" alt="image">
+			<img class="myImg" src="img/7.jpg" alt="image">
+			<img class="myImg" src="img/8.jpg" alt="image">
+			<img class="myImg" src="img/9.jpg" alt="image">
+		</div>
 		<div class="btn-container">
+
 			<button class="btn-prev disabled" type="button">Prev</button>
 			<button class="btn-next" type="button">Next</button>
 		</div>
+	</div>
+	<!--Другий варіант-->
+	<div class="inner">
+		<div class="img-container">
+			<h1>Другий варіант</h1>
+			<img id="myImg" src="" alt="image">
+		</div>
+		<div class="button-container">
+			<button class="button-prev" type="button">Prev</button>
+			<button class="button-next" type="button">Next</button>
+		</div>
+	</div>
 </div>
 
 <script src="main.js"></script>
