@@ -1,0 +1,38 @@
+.wrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  row-gap: 32px;
+  height: 100vh;
+}
+
+button{
+  padding: 15px 30px;
+  background: black;
+  color: aliceblue;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: 700;
+  border: 0;
+  cursor: pointer;
+  transition: background 0.4s ease 0s;
+}
+button:hover{
+  background: seagreen;
+}
+button.disabled{
+  pointer-events: none;
+  background: darkgray;
+}
+
+.myImg{
+  width: 100%;
+  max-width: 500px;
+  height: 400px;
+  object-fit: cover;
+  display: none;
+}
+.myImg.active{
+  display: block;
+}
