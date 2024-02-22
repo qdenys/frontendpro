@@ -1,0 +1,20 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.reactions_list {
+  display: flex;
+  gap: 24px;
+}
+.reactions_item{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 8px;
+}
+
+.reactions_item span{
+  cursor: pointer;
+}
