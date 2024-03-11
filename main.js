@@ -4,15 +4,13 @@ document.addEventListener('DOMContentLoaded', function () {
 	const postInfo = document.querySelector('#postInfo');
 	const searchInput = document.querySelector('#search-input');
 	const searchButton = document.querySelector('#search-button');
-	let postData = [];
-	let commentsData = [];
 	let areCommentsShown = false;
 	function findPost(postArr) {
 		areCommentsShown = false;
 		postInfo.innerHTML = '';
 		let searchPostId = parseInt(searchInput.value);
-		if (searchPostId > 100) {
-			postInfo.innerText = 'Not found post';
+		if (isNaN(searchPostId) || searchPostId > 100) {
+			postInfo.innerText = 'Post not found or invalid ID';
 			return;
 		}
 		let filteredPosts = postArr.filter((post) => {
@@ -56,11 +54,10 @@ document.addEventListener('DOMContentLoaded', function () {
 	}
 
 	function getPostComments(postId) {
-		fetch(url + `/posts/${postId}/comments1`)
+		fetch(url + `/posts/${postId}/comments`)
 				.then(response => response.json())
 				.then(data => {
-					commentsData = data;
-					showAllComments(commentsData);
+					showAllComments(data);
 				}).catch(error =>{
 			console.log('Error fetching post comments:', error);
 			postInfo.innerText = 'Error loading comments';
@@ -71,9 +68,8 @@ document.addEventListener('DOMContentLoaded', function () {
 		fetch(url + '/posts')
 				.then(response => response.json())
 				.then(data => {
-					postData = data;
-					showAllPost(postData);
-					searchButton.addEventListener('click', () => findPost(postData));
+					showAllPost(data);
+					searchButton.addEventListener('click', () => findPost(data));
 				}).catch(error =>{
 			console.log('Error fetching posts:', error);
 			postList.innerText = 'Error loading posts';
