@@ -174,7 +174,11 @@ document.addEventListener('DOMContentLoaded', function () {
 			return kelvin - 273.15;
 		}
 
-		gustsWrapper.innerHTML = `${data.wind.gust} m/s`;
+		if(data.wind.gust){
+			gustsWrapper.innerHTML = `${data.wind.gust} m/s`;
+		}else{
+			gustsWrapper.innerHTML = `0 m/s`;
+		}
 		feelsWrapper.innerHTML = `${Math.round(kelvinToCelsius(tempInKelvin))} °C`;
 		cloudinessWrapper.innerHTML = `${data.clouds.all} %`;
 		weatherGusts.appendChild(gustsWrapper);
