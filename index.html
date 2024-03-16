@@ -4,10 +4,122 @@
 	<meta charset="UTF-8">
 	<meta name="viewport"
 				content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="style.css">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Document</title>
 </head>
 <body>
+<div class="wrapper">
+	<div class="weather">
+		<div class="weather__top">
+			<div class="weather__left-col">
+				<div class="search-holder">
+					<input class="searchInput" type="search" placeholder="Enter city">
+					<button class="searchButton"></button>
+				</div>
+				<img class="weather__img" src="img/thunderstorm.png" alt="image">
+				<div class="weather__temp"></div>
+				<div class="weather__city"></div>
+				<div class="weather__box-description">
+					<img class="weather__icon" src="http://openweathermap.org/img/w/10d.png" alt="image">
+					<div class="weather__description"></div>
+				</div>
 
+			</div>
+			<div class="weather__right-col">
+				<h3>Today's Highlights</h3>
+				<div class="weather__cards cards">
+					<div class="cards__col">
+						<div class="cards__big">
+							<h4 class="cards__title">Pressure</h4>
+							<div class="cards__image-holder">
+								<img src="img/barometer.png" width="483" height="311" alt="image">
+							</div>
+							<div class="weather__pressure cards__data"></div>
+						</div>
+						<div class="cards__small">
+							<h4 class="cards__title">Wind gusts</h4>
+							<div class="cards__box">
+								<div class="weather__gusts cards__data"></div>
+								<div class="weather__gusts cards__data cards__data--description">
+									<img src="img/gusts.svg" alt="icon">
+									Learn
+									<a href="https://www.windy.com/articles/weather-phenomena-what-s-the-difference-between-sustained-winds-and-wind-gusts-10390?satellite,7.787,115.115,5">more</a> about gusts
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="cards__col">
+						<div class="cards__big">
+							<h4 class="cards__title">Wind</h4>
+							<div class="cards__image-holder">
+								<img src="img/equalizer.png" width="512" height="512" alt="image">
+							</div>
+							<div class="cards__box">
+								<div class="weather__speed cards__data"></div>
+								<div class="weather__deg cards__data"></div>
+							</div>
+						</div>
+						<div class="cards__small">
+							<h4 class="cards__title">Feels like</h4>
+							<div class="cards__box">
+								<div class="weather__feels cards__data"></div>
+								<div class="weather__feels cards__data cards__data--description">
+									<img src="img/humidity.svg" alt="icon">
+									How hot or cold it really feels
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="cards__col">
+						<div class="cards__big">
+							<h4 class="cards__title">Sunrise and sunset</h4>
+							<div class="cards__image-holder">
+								<img src="img/sun-moving.png" width="238" height="128" alt="image">
+							</div>
+							<div class="cards__box">
+								<div class="weather__sunrise cards__data"></div>
+								<div class="weather__sunset cards__data"></div>
+							</div>
+						</div>
+						<div class="cards__small">
+							<h4 class="cards__title">Cloudiness</h4>
+							<div class="cards__box">
+								<div class="weather__cloudiness cards__data"></div>
+								<div class="weather__cloudiness cards__data cards__data--description">
+									<img src="img/cloud.svg" alt="icon">
+									The sky fraction obscured by clouds
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="weather__bottom">
+			<div class="weather__left-col">
+				<div class="weather__image-holder">
+					<img src="img/compass.png" alt="image">
+				</div>
+				<div class="weather__text-block">
+					<div class="weather__longitude"></div>
+					<div class="weather__latitude"></div>
+				</div>
+			</div>
+			<div class="weather__right-col">
+				<div class="weather__image-holder">
+					<img src="img/humidity.png" alt="image">
+				</div>
+				<div class="weather__text-block">
+					<div class="weather__humidity"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+
+<script src="main.js"></script>
 </body>
 </html>
