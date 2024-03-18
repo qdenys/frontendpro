@@ -4,7 +4,6 @@
     <option name="bem" value="true" />
     <option name="bemComments" value="true" />
     <option name="bemModifierPrefix" value="--" />
-    <option name="language" value="SCSS" />
     <option name="target" value="CLIPBOARD" />
   </component>
 </project>
