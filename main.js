@@ -20,7 +20,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 	function generateSubList(array){
-		console.log(array)
 			let sublist = '<ul>';
 		array.forEach(item => {
 				sublist += `<li>${item}</li>`;
