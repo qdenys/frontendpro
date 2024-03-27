@@ -236,18 +236,6 @@ document.addEventListener('DOMContentLoaded', function () {
 	function clearContainer(container) {
 		container.innerHTML = '';
 	}
-
-	// function createCloseOrderBtn() {
-	// 	const closeOrderBtn = document.createElement('div');
-	// 	closeOrderBtn.classList.add('order__close');
-	// 	order.appendChild(closeOrderBtn);
-	// 	orderList.appendChild(closeOrderBtn);
-	// 	closeOrderBtn.addEventListener('click', () => {
-	// 		order.classList.remove('active');
-	// 		orderList.classList.remove('active');
-	// 		overlay.classList.remove('active');
-	// 	});
-	// }
 	function createCloseOrderBtn(modalContainer) {
 		const closeOrderBtn = document.createElement('div');
 		closeOrderBtn.classList.add('order__close');
