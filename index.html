@@ -5,9 +5,86 @@
 	<meta name="viewport"
 				content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Document</title>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="style.css">
+	<title>ДЗ 31. LocalStorage</title>
 </head>
 <body>
+<div class="modal">
+	<div class="modal__close"></div>
+	<form class="form">
+		<div class="form__box">
+			<div class="form__input-holder">
+				<label for="clientName">
+					Ім'я
+					<input id="clientName" class="input" type="text" placeholder="Введіть своє ім'я" required>
+				</label>
+			</div>
+			<div class="form__input-holder">
+				<label for="clientSurname">
+					Прізвище
+					<input id="clientSurname" class="input" type="text" placeholder="Введіть своє прізвище" required>
+				</label>
+			</div>
+			<div class="form__input-holder">
+				<label for="clientPatronymic">
+					По-батькові
+					<input id="clientPatronymic" class="input" type="text" placeholder="Введіть своє по-батькові" required>
+				</label>
+			</div>
+		</div>
+		<div class="form__box">
+			<div class="form__select-holder">
+				<label for="clientCity">
+					Місто
+					<select id="clientCity" name="city" class="select" required>
+						<option value="Kiev">Kiev</option>
+						<option value="Kharkiv">Kharkiv</option>
+						<option value="Lviv">Lviv</option>
+						<option value="Kramatorsk">Kramatorsk</option>
+					</select>
+				</label>
+			</div>
+			<div class="form__input-holder">
+				<label for="clientPost">
+					Номер складу Нової пошти
+					<input id="clientPost" class="input" type="number" placeholder="Введіть номер" required>
+				</label>
+			</div>
+		</div>
+		<div class="form__box-holder">
+			<label for="postpaid">
+				Післяплата
+				<input type="radio" id="postpaid" name="paymentMethod" value="Післяплата" checked>
+			</label>
+			<label for="paymentOnline">
+				Онлайн
+				<input type="radio" id="paymentOnline" name="paymentMethod" value="Онлайн">
+			</label>
+		</div>
+		<div class="form__box-holder">
+			<label for="quantity">
+				Кількість продукції
+				<input type="number" id="quantity" name="quantity" min="1" max="100" value="1">
+			</label>
+		</div>
+		<div class="form__textarea-holder">
+			<textarea id="comment" placeholder="Коментар до замовлення"></textarea>
+		</div>
+		<button class="form__submit" type="submit">Відправити</button>
+	</form>
+</div>
+<div class="order"></div>
+<div class="order-list"></div>
+<div class="overlay"></div>
+<div class="wrapper">
+	<button class="btn btn--orders" type="button">My orders</button>
+	<div class="col col--left"></div>
+	<div class="col col--middle"></div>
+	<div class="col col--right"></div>
+</div>
 
+
+<script src="main.js"></script>
 </body>
 </html>

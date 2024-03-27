@@ -1,0 +1,288 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  height: 100vh;
+  padding: 0 16px;
+  background: black;
+}
+
+.col {
+  flex: 1 0 0;
+  min-height: 400px;
+  border-radius: 16px;
+  background-color: darkgrey;
+  display: flex;
+  flex-direction: column;
+  row-gap: 12px;
+  padding: 24px;
+  background-image: url("img/gradient-1.jpg");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+}
+
+.col div {
+  font-size: 38px;
+  line-height: 1.2;
+  font-weight: 600;
+  color: whitesmoke;
+}
+
+.col--left > div, .col--middle > div {
+  cursor: pointer;
+  transition: transform 0.4s, color 0.4s;
+  text-transform: uppercase;
+}
+
+.col--left > div:hover, .col--middle > div:hover {
+  transform: translateX(50px);
+  color: beige;
+}
+
+.btn, .form__submit {
+  width: fit-content;
+  border: 0;
+  background-color: black;
+  font-size: 18px;
+  color: white;
+  text-transform: uppercase;
+  padding: 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.4s;
+  margin: 0 auto;
+}
+
+.btn:hover, .form__submit:hover {
+  transform: scale(1.1);
+}
+.btn--orders{
+  position: absolute;
+  top: 50px;
+  left: 16px;
+  background-color: white;
+  color: black;
+}
+.col--right > div {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+  align-self: stretch;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.empty-message{
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.col--right {
+  background-image: url("img/gradient-2.jpg");
+}
+
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 5;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s ease 0s;
+}
+
+.overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/*--------------------Modal--------------------*/
+.modal, .order, .order-list {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  right: 0;
+  z-index: 15;
+  transform: translate(-50%, -500%);
+  width: 100%;
+  max-width: 800px;
+  padding: 24px;
+  border-radius: 16px;
+  background-image: url("img/gradient-2.jpg");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+  transition: transform 0.6s;
+  pointer-events: none;
+}
+
+.order, .order-list {
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  z-index: 10;
+  transition: opacity 0.8s;
+  color: azure;
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
+}
+
+.order > div {
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+}
+
+.modal.active {
+  pointer-events: all;
+  transform: translate(-50%, -50%);
+}
+
+.order.active {
+  opacity: 1;
+  pointer-events: all;
+}
+.order-list.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.modal__close, .order__close, .order-list__close,.delete-order  {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 24px;
+  height: 24px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.modal__close:before, .order__close:before, .modal__close:after, .order__close:after, .order-list__close:before, .order-list__close:after, .delete-order:before, .delete-order:after{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 11px;
+  width: 2px;
+  height: 24px;
+  background-color: white;
+}
+
+.modal__close:before, .order__close:before, .order-list__close:before , .delete-order:before{
+  transform: rotate(45deg);
+}
+
+.modal__close:after, .order__close:after, .order-list__close:after, .delete-order:after {
+  transform: rotate(-45deg);
+}
+
+
+.form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 12px;
+}
+details{
+  cursor: pointer;
+}
+details summary{
+  margin-bottom: 12px;
+}
+details div{
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+}
+.orderElement{
+  position: relative;
+  width: fit-content;
+}
+
+.orderElement .delete-order{
+  top: 0;
+  right: -48px;
+}
+
+.form__input-holder label, .form__select-holder label, .form__box-holder label {
+  color: azure;
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+}
+
+.form__box-holder label {
+  padding: 5px;
+  border: 1px solid transparent;
+}
+
+.form__input-holder input, .form__select-holder input, select, textarea {
+  border: 1px solid transparent;
+  padding: 8px;
+  outline: none;
+  color: black;
+}
+
+input.novalid, label.novalid {
+  border: 1px solid red;
+}
+
+.form__input-holder input:focus, .form__select-holder input:focus {
+  outline: none;
+}
+
+.form__input-holder input::placeholder, textarea::placeholder {
+  color: black;
+}
+
+.form__box {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.form__box .form__input-holder, .form__box .form__select-holder {
+  flex: 1 0 0;
+}
+
+.form__textarea-holder textarea {
+  display: block;
+  resize: none;
+  outline: none;
+  border: 0;
+  padding: 10px;
+  width: calc(100% - 24px);
+  min-height: 100px;
+}
+
+.form__box-holder {
+  display: flex;
+  align-items: center;
+  column-gap: 32px;
+}
+
+.form__box-holder label {
+  align-items: center;
+  column-gap: 16px;
+  flex-direction: row;
+}
+
+
+.form__box-holder input[type="number"] {
+  padding: 10px;
+}
